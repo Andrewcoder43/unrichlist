@@ -1,0 +1,448 @@
+/* Basic reset and global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* New Navigation Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Ranking List Styles */
+.ranking-list {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rank {
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.person-image {
+    width: 100px;
+    height: auto;
+}
+
+.person-name {
+    font-weight: bold;
+}
+
+.impact-areas {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.impact-area {
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+    font-size: 0.9rem;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Filters and Buttons */
+.filters {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.filters select, .filters input {
+    padding: 5px;
+}
+
+.nominate-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styles */
+#nomination-form input,
+#nomination-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#nomination-form .impact-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#nomination-form .impact-area {
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+#nomination-form .impact-area:hover {
+    transform: scale(1.05);
+}
+
+#nomination-form .impact-area.selected {
+    opacity: 0.7;
+    box-shadow: inset 0 0 0 2px white;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .navbar {
+    background-color: #222;
+}
+
+body.dark-mode .logo,
+body.dark-mode .nav-links a,
+body.dark-mode .dark-mode-toggle {
+    color: #fff;
+}
+
+body.dark-mode .ranking-list,
+body.dark-mode .popup-content {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .close-btn {
+    color: #fff;
+}
+
+body.dark-mode .close-btn:hover,
+body.dark-mode .close-btn:focus {
+    color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ranking-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .rank {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: none; /* You might want to implement a mobile menu */
+    }
+}
+
+.blog-header {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 0 3rem 3rem;
+}
+
+.blog-post {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.vote-buttons {
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.vote-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.vote-buttons .upvote:hover {
+    color: #4CAF50;
+}
+
+.vote-buttons .downvote:hover {
+    color: #f44336;
+}
+
+.vote-count {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.blog-content {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-content:hover {
+    text-decoration: none;
+}
+
+.blog-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-title {
+    font-size: 1.2rem;
+    margin: 1rem 1rem 0.5rem;
+    color: #333;
+}
+
+.blog-excerpt {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 1rem 1rem;
+}
+
+.blog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 1rem;
+    border-top: 1px solid #eee;
+}
+
+.blog-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.blog-actions button:hover {
+    color: #333;
+}
+
+.comment-count {
+    margin-left: 5px;
+}
+
+.share-options {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.share-options button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.share-options button:hover {
+    transform: scale(1.1);
+}
+
+.share-options .fa-facebook {
+    color: #3b5998;
+}
+
+.share-options .fa-twitter {
+    color: #1da1f2;
+}
+
+.share-options .fa-linkedin {
+    color: #0077b5;
+}
+
+.share-options .fa-envelope {
+    color: #d93025;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 2rem;
+    }
+
+    .vote-buttons {
+        left: 10px;
+        top: 10px;
+        flex-direction: row;
+    }
+
+    .vote-count {
+        margin: 0 10px;
+    }
+}
